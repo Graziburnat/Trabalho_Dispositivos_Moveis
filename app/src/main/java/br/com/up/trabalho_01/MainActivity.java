@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout layoutMensagem;
     private TextInputEditText editMensagem;
     private Button botaoEnviar;
+    /*sdcas*/
 
 
     @Override
