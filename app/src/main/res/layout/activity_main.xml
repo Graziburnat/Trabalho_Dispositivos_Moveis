@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TituloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="casual"
+        android:text="Mensagem WhatsApp"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutNum"
+        android:layout_width="262dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="104dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/purple_700"
+        app:boxStrokeColor="@color/teal_700"
+        app:endIconTint="@color/purple_200"
+        app:hintTextColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TituloText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EditNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:hint="Digite o número a ser enviado"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutMensagem"
+        android:layout_width="301dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="96dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/purple_500"
+        app:boxStrokeColor="@color/teal_700"
+        app:endIconTint="@color/purple_200"
+        app:hintTextColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutNum">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EditMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:fontFamily="casual"
+            android:hint="Digite a mensagem a ser enviada" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/BotaoEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/teal_700"
+        android:fontFamily="casual"
+        android:text="Enviar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
