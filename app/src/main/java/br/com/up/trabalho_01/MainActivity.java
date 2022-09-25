@@ -1,19 +1,20 @@
 package br.com.up.trabalho_01;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.net.URI;
-import java.net.URL;
+import  android.widget.Toast;
+
+import com.hbb20.CountryCodePicker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout layoutMensagem;
     private TextInputEditText editMensagem;
     private Button botaoEnviar;
-    /*sdcas*/
 
 
     @Override
@@ -35,24 +35,26 @@ public class MainActivity extends AppCompatActivity {
         layoutMensagem = findViewById(R.id.LayoutMensagem);
         editMensagem = findViewById(R.id.EditMensagem);
 
-        String num = editNum.getText().toString();
-        String mensagem = editMensagem.getText().toString();
-        mensagem.replace(' ', '%');
-
         botaoEnviar = findViewById(R.id.BotaoEnviar);
         botaoEnviar.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent enviarIntent = new Intent(Intent.ACTION_SEND);
-                        enviarIntent.putExtra(Intent.EXTRA_PHONE_NUMBER, new String [] {num});
-                        enviarIntent.putExtra(Intent.EXTRA_TEXT, new String [] {mensagem});
-                        enviarIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("https://wa.me/155" + num + "?text=" + mensagem));
-
-                        startActivity(enviarIntent);
+                        enviar();
                     }
                 }
         );
 
     }
+
+    private void enviar(){
+        String num = editNum.getText().toString();
+        String msg = editMensagem.getText().toString();
+
+        Uri link = Uri.parse("https://wa.me/"+num+"?text="+msg);
+        Intent enviar = new Intent(Intent.ACTION_VIEW, link);
+
+        startActivity(enviar);
+    }
+
 }

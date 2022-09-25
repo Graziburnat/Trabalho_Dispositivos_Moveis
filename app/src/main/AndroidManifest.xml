@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.up.trabalho_01">
+    <queries> <package android:name="com.whatsapp" /> </queries>
 
     <application
         android:allowBackup="true"
